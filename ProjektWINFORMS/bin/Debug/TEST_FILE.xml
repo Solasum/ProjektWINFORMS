@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table1>
+    <Data>2019-02-04</Data>
+    <Rower_x003A__x0020_Interwały>11</Rower_x003A__x0020_Interwały>
+  </Table1>
+  <Table1>
+    <Data>2019-02-16</Data>
+    <Rower_x003A__x0020__x0020_jazda_x0020_rekreacyjna>132</Rower_x003A__x0020__x0020_jazda_x0020_rekreacyjna>
+    <Ciężary_x003A__x0020_klata>34</Ciężary_x003A__x0020_klata>
+  </Table1>
+  <Table1>
+    <Data>2019-02-23</Data>
+    <Ciężary_x003A__x0020_barki>36</Ciężary_x003A__x0020_barki>
+  </Table1>
+  <Table1>
+    <Data>2019-04-04</Data>
+    <Rower_x003A__x0020_Interwały>12</Rower_x003A__x0020_Interwały>
+  </Table1>
+</NewDataSet>

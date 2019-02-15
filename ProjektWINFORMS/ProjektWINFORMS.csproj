@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DodajAkt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajAkt.Designer.cs">
+      <DependentUpon>DodajAkt.cs</DependentUpon>
+    </Compile>
     <Compile Include="edytujCat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +73,15 @@
     <Compile Include="stworz.Designer.cs">
       <DependentUpon>stworz.cs</DependentUpon>
     </Compile>
+    <Compile Include="wykres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="wykres.Designer.cs">
+      <DependentUpon>wykres.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DodajAkt.resx">
+      <DependentUpon>DodajAkt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="edytujCat.resx">
       <DependentUpon>edytujCat.cs</DependentUpon>
     </EmbeddedResource>
@@ -80,9 +96,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="stworz.resx">
       <DependentUpon>stworz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="wykres.resx">
+      <DependentUpon>wykres.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,6 +116,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="niepanikuj.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="excercise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tenor.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

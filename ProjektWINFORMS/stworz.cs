@@ -29,9 +29,9 @@ namespace ProjektWINFORMS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string newCat = textBox1.Text;
             string excName = richTextBox1.Text;
-            
+            string newCat = textBox1.Text;
+         
             if (newCat.Length==0 || excName.Length==0)
             {
                 MessageBox.Show("Nazwa kategorii i/lub rodzaje ćwiczeń nie mogą być puste");
@@ -44,36 +44,18 @@ namespace ProjektWINFORMS
                     exclList.Insert(0, newCat);
                     Globals.Excercises.Add(exclList);
                     if (!Globals.DTable.Columns.Contains("Data"))
-                    {
                         Globals.DTable.Columns.Add("Data", typeof(string));
-                    };
-                    int count = 0;
-                    var categ = string.Empty;
+                    
                     foreach (string ex in exclList)
-                    {
-                        if (count == 0)
-                        {
-                            count += 1;
-                        }
-                        else
-                        {
-                            if (!Globals.DTable.Columns.Contains(newCat + ": " + ex))
-                            {
+                        if (!Globals.DTable.Columns.Contains(newCat + ": " + ex))
                                 Globals.DTable.Columns.Add(newCat + ": " + ex, typeof(string));
-                            }
-                        }
-                    }
                 }
                 else
                 {
                     if (!Globals.DTable.Columns.Contains("Data"))
-                    {
                         Globals.DTable.Columns.Add("Data", typeof(string));
-                    }
                     if (!Globals.DTable.Columns.Contains(newCat + ": " + excName))
-                    {
                         Globals.DTable.Columns.Add(newCat + ": " + excName, typeof(string));
-                    }
                     Globals.Excercises.Add(new List<string> {newCat, excName});
                 }
                 if (Globals.Excercises.Count > 0)

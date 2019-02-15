@@ -10,3 +10,5 @@ C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWIN
 C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.pdb
 C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.stworz.resources
 C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.edytujCat.resources
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.DodajAkt.resources
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.Wykres.resources
