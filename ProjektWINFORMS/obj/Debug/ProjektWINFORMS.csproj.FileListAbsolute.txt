@@ -1,0 +1,12 @@
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\bin\Debug\ProjektWINFORMS.exe.config
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\bin\Debug\ProjektWINFORMS.exe
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\bin\Debug\ProjektWINFORMS.pdb
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.csprojAssemblyReference.cache
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.Form1.resources
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.Properties.Resources.resources
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.csproj.GenerateResource.cache
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.csproj.CoreCompileInputs.cache
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.exe
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.pdb
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.stworz.resources
+C:\Users\pawel\source\repos\ProjektWINFORMS\ProjektWINFORMS\obj\Debug\ProjektWINFORMS.edytujCat.resources
