@@ -8,7 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic.FileIO;
 
+public static class Globals
+{
+    public static List<List<string>> Excercises = new List<List<string>>();
+    public static List<List<string>> doneExcercises = new List<List<string>>();
+    public static DataTable DTable = new DataTable();
+    public static BindingSource SBind = new BindingSource();
+    public static DataGridView dataGridView1 = new DataGridView();
+    public static bool visibility = false;
+}
 namespace ProjektWINFORMS
 {
     public partial class Form1 : Form
@@ -184,7 +194,7 @@ namespace ProjektWINFORMS
                 using (OpenFileDialog openFileDialog = new OpenFileDialog())
                 {
                     openFileDialog.InitialDirectory = dir;
-                    openFileDialog.Filter = "xml files (*.xml)|*.xml";
+                    openFileDialog.Filter = "xml files (*.xml)|*.xml"; //"xml files (*.xml)|*.xml|csv files (*.csv)|*.csv //xml files (*.xml)|*.xml
                     openFileDialog.FilterIndex = 1;
                     openFileDialog.RestoreDirectory = true;
 
@@ -257,6 +267,111 @@ namespace ProjektWINFORMS
                             }
                             Globals.Excercises.Sort((a, b) => a[1].CompareTo(b[1]));
                         }
+                        if(extension.ToLower() == ".csv")
+                        {
+                            DataSet dataSet = new DataSet();
+                            //dataSet.Tables.Add(Globals.DTable);
+                            DataTable table = new DataTable();
+
+
+
+
+                            using (TextFieldParser csvParser = new TextFieldParser(file))
+                            {
+                                //csvParser.CommentTokens = new string[] { "#" };
+                                csvParser.SetDelimiters(new string[] { ";" });
+                                //csvParser.HasFieldsEnclosedInQuotes = true;
+                                
+
+
+
+                                string[] fields1 = csvParser.ReadFields();
+                                foreach(string z in fields1)
+                                    table.Columns.Add(new DataColumn(z, typeof(string)));
+
+
+                                while (!csvParser.EndOfData)
+                                {
+                                    string[] fields = csvParser.ReadFields();
+                                    DataRow dr = table.NewRow();
+                                    int indx = 0;
+                                    foreach (string z in fields)
+                                    {
+                                       
+                                        dr[fields1[indx]] = z;
+
+                                        indx++;
+                                    }
+                                    table.Rows.Add(dr);
+                                    
+                                    
+
+
+                                }
+                                dataSet.Tables.Add(table);
+                            }
+
+
+
+
+
+                            
+                            foreach (DataRow row in table.Rows)
+                            {
+                                foreach (DataColumn column in table.Columns)
+                                {
+                                    Console.WriteLine(row[column]);
+                                }
+                            }
+                            this.dataGridView1.Columns.Clear();
+                            Globals.DTable = table;
+                            this.dataGridView1.DataSource = Globals.DTable;
+                            this.dataGridView1.Update();
+                            this.dataGridView1.Visible = true;
+
+                            //foreach (DataGridViewRow row in dataGridView1.Rows)
+                            String cat, excName;
+                            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                            {
+                                String header = dataGridView1.Columns[i].HeaderText;
+                                //Console.WriteLine(header);
+
+                                if (header == "Data")
+                                    continue;
+                                int index = header.IndexOf(":");
+                                cat = header.Substring(0, index);
+                                excName = header.Substring(index + 2);
+                                Globals.Excercises.Add(new List<string> { cat, excName });
+                                //Console.WriteLine(excName);
+
+                            }
+                            string sDate = "";
+                            string count = "";
+                            for (int j = 0; j < dataGridView1.RowCount; j++)
+                            {
+                                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                                {
+
+                                    String header = dataGridView1.Columns[i].HeaderText;
+                                    if (header == "Data")
+                                        if (dataGridView1.Rows[j].Cells[i].Value != null)
+                                            sDate = dataGridView1.Rows[j].Cells[i].Value.ToString();
+                                    if (header != "Data")
+                                    {
+                                        int index = header.IndexOf(":");
+                                        cat = header.Substring(0, index);
+                                        excName = header.Substring(index);
+                                        if (dataGridView1.Rows[j].Cells[i].Value != null)
+                                            count = dataGridView1.Rows[j].Cells[i].Value.ToString();
+
+                                        Globals.doneExcercises.Add(new List<string> { sDate, excName, count });
+                                    }
+
+
+                                }
+                            }
+                            Globals.Excercises.Sort((a, b) => a[1].CompareTo(b[1]));
+                        }
 
                     }
                 }
@@ -269,13 +384,4 @@ namespace ProjektWINFORMS
 
         }
     }
-}
-public static class Globals
-{
-    public static List<List<string>> Excercises = new List<List<string>>();
-    public static List<List<string>> doneExcercises = new List<List<string>>();
-    public static DataTable DTable = new DataTable();
-    public static BindingSource SBind = new BindingSource();
-    public static DataGridView dataGridView1 = new DataGridView();
-    public static bool visibility=false;
 }
